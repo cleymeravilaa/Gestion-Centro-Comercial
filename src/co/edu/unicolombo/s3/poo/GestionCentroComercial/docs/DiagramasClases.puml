@@ -1,0 +1,152 @@
+@startuml
+
+'Local
+class Shop {
+    - id : int
+    - name : String 
+    - owner : Owner
+    - category : String 
+    - area : double
+    - location : String
+    - rentPrice: double
+    - status : String
+    + rent() : void 
+    + released(): void
+}
+
+' Contrato Alquiler
+class RentalContract {
+    - idContrat : int
+    - shop : Shop
+    - startDate : Date
+    - endDate : Date
+    - Client : Cliente
+    + renewContract(Date endDate): void
+    + cancelContract(): void
+}
+
+'Parqueadero
+class ParkingLot {
+    - location: String
+    - totalCapacity : int
+    - cubicles : ArrayList<Cubicle>
+    + seeDisponibility() void
+    + assignCubicle(Vehicle vehicle): void
+    + releasedCubicle(Cubicle cubicle) : void
+}
+
+' Cubiculo
+class Cubicle {
+    - id: int
+    - type: String
+    - status: String
+    + take() : void
+    + release() : void
+}
+
+' Vehiculo
+class Vehicle {
+    - licensePlate : String
+    - type: String
+    - ownerName : String
+    - description: String
+    - timeSpent : String
+    + calcFeeToPay() : double
+}
+
+' Usuario
+class User {
+    # id: int
+    # name: String
+    # email : String
+    # rol : Rol
+    # loggin(): void
+    # logout(): void
+}
+
+' Propietario
+class Owner {
+    - shops: ArrayList<Shop>
+    + manageShops(): void
+}
+
+' Cliente
+class Client {
+    - rentsRecord: ArrayList<RentalContract>
+    + rentShop(): void
+    + reserveCubicle(): void
+}
+
+' Admin
+class Administrator {
+    + manageUsers(): void
+    + manageShops(): void
+    + manageParkingLots(): void
+}
+
+' Rol
+class Role {
+    - id: int
+    - roleName: String
+    - assignPermissions(): void
+    - seePermissions(): void
+}
+
+' Factura
+class Invoice {
+    - id: int
+    - totalAmount: double 
+    - issueDate: Date
+    - details: String
+    + generateInvoice(): void
+    + payInvoice(): void
+}
+
+' Reporte
+class Report {
+    - type: String
+    - issueDate : Date
+    - content: String
+    + generateReport(): void
+    + viewReport(): void
+}
+
+' Mantenimiento
+class Maintenance {
+    - idMaintenance: int
+    - type: String
+    - scheduledDate : Date
+    - shop: Shop
+    + Schedule(): void
+    + carryout(): void
+}
+
+
+' Relaciones 
+
+' Herencia
+User <|-- Owner 
+User <|-- Administrator 
+User <|-- Client
+
+' Asociacion
+Shop "*" -- "1" Owner : pertenecer
+RentalContract "*" -- "1" Shop : alquilar
+RentalContract "*" -- "1" Client : contratar
+ParkingLot "1" --o "n" Cubicle: tener >
+' Relación entre Cubicle y Vehicle
+Cubicle --> Vehicle : "ocupado por"
+
+' Relación entre Usuario y Rol
+User --> Role : "tiene"
+' Relación entre Invoice y Client
+Invoice --> Client : "emitida a"
+
+' Relación entre Reporte y Administrator
+Report --> Administrator : "generado por"
+
+' Relación entre Mantenimiento y Shop
+Maintenance --> Shop : "realizado en"
+
+
+@enduml
