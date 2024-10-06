@@ -103,7 +103,6 @@ class Administrator {
 
 class Employee {
     - id: int
-    - name: String
     - email : String
     - position : String
     - salary : double
