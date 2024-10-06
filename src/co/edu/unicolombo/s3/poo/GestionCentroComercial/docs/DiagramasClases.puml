@@ -1,5 +1,21 @@
 @startuml
 
+' Centro Comercial
+class ShoppingCenter {
+    - openigTime : String
+    - closingTime : String
+    - name : String
+    - address : String
+    - parkingLots : ArrayList<ParkingLot>
+    - shops : ArrayList<Shop>
+    - employes : ArrayList<Employee>
+    + addShop(Shop shop): void
+    + removeShop(shop shop): void
+    - generateReport(): Report
+    - hireEmployee(Employee employee) : void
+    - fireEmployee(Employee employee) : void
+}
+
 'Local
 class Shop {
     - id : int
@@ -11,7 +27,7 @@ class Shop {
     - rentPrice: double
     - status : String
     + rent() : void 
-    + released(): void
+    + release(): void
 }
 
 ' Contrato Alquiler
@@ -62,6 +78,7 @@ class User {
     # rol : Rol
     # loggin(): void
     # logout(): void
+    # updateProfile(): void
 }
 
 ' Propietario
@@ -84,6 +101,16 @@ class Administrator {
     + manageParkingLots(): void
 }
 
+class Employee {
+    - id: int
+    - name: String
+    - email : String
+    - position : String
+    - salary : double
+    - name : String
+    + clockIn(): void
+    + clockOut(): void
+}
 ' Rol
 class Role {
     - id: int
@@ -142,6 +169,8 @@ User --> Role : "tiene"
 ' Relación entre Invoice y Client
 Invoice --> Client : "emitida a"
 
+Invoice "*" -- "1" Shop: factura
+
 ' Relación entre Reporte y Administrator
 Report --> Administrator : "generado por"
 
@@ -149,4 +178,8 @@ Report --> Administrator : "generado por"
 Maintenance --> Shop : "realizado en"
 
 
+' Composicion
+ShoppingCenter *-- "*" Shop : Esta compuesto por
+ShoppingCenter *-- "1..*" ParkingLot : Esta compuesto por
+ShoppingCenter "1" --o "*" Employee : Tiene
 @enduml
