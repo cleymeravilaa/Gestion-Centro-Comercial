@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  *
- * @author PC
+ * @author Daniel
  */
 public class Report {
     private String type;
