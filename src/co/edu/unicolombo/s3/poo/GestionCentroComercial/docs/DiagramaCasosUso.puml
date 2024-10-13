@@ -1,0 +1,28 @@
+@startuml
+actor Administrador
+
+package "Administra la App" as p1 {
+  
+  package "Gestión de Locales" as p2{
+    usecase "Registrar nuevo arrendatario" as UC1
+    usecase "Modificar datos de arrendatarios" as UC2
+    usecase "Registrar contrato de arrendamiento" as UC3
+    usecase "Renovar contrato de arrendamiento" as UC4
+    usecase "Terminar contrato de arrendamiento" as UC5
+    usecase "Consultar disponibilidad de locales" as UC6
+    usecase "Generar reportes de arrendamiento" as UC7
+  }
+  
+  package "Gestión de Parqueadero" as p3{
+    usecase "Registrar entrada de vehículo" as UC8
+    usecase "Registrar salida de vehículo" as UC9
+    usecase "Controlar ocupación del parqueadero" as UC10
+    usecase "Asignar cubículo de estacionamiento" as UC11
+    usecase "Generar reportes de uso del parqueadero" as UC12
+    usecase "Consultar disponibilidad de locales" as UC13
+  }
+}
+
+Administrador --> p1
+
+@enduml
