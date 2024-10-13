@@ -6,26 +6,24 @@ class ShoppingCenter {
     - closingTime : String
     - name : String
     - address : String
-    - parkingLots : ArrayList<ParkingLot>
+    - parkingLot : ParkingLot
     - shops : ArrayList<Shop>
-    - employes : ArrayList<Employee>
     + addShop(Shop shop): void
     + removeShop(shop shop): void
     - generateReport(): Report
-    - hireEmployee(Employee employee) : void
-    - fireEmployee(Employee employee) : void
 }
 
+' Entidades Gestion Locales
 'Local
 class Shop {
     - id : int
     - name : String 
-    - owner : Owner
     - category : String 
     - area : double
     - location : String
     - rentPrice: double
     - status : String
+    - maintenances : ArrayList<Maintenance>
     + rent() : void 
     + release(): void
 }
@@ -33,19 +31,74 @@ class Shop {
 ' Contrato Alquiler
 class RentalContract {
     - idContrat : int
-    - shop : Shop
+    - renterShop : Shop
     - startDate : Date
     - endDate : Date
-    - Client : Cliente
+    - client : Cliente
+    - amount : double
+    - payments : ArrayList<Payment>
     + renewContract(Date endDate): void
     + cancelContract(): void
 }
 
+' Pagos
+class Payment {
+    - id : int
+    - date : Date
+    - amount : double
+    - paymentMethod : String
+    - rentalContract : RentalContract
+    - invoice : Invoice
+}
+
+' Arrendatario
+class Renter {
+    - id : int
+    - name : String
+    - phone : String
+    - email : String
+    - rentalContracts : ArrayList<RentalContract>
+    - payments: ArrayList<Payment>
+    - invoices : ArrayList<Invoice>
+}
+
+' Factura
+class Invoice {
+    - id: int
+    - totalAmount: double 
+    - issueDate: Date
+    - details: String
+    + generateInvoice(): void
+    + payInvoice(): void
+}
+
+' Reporte
+class Report {
+    ' tipo: General, Pagos, Facturas, arrendatario, Local, contrato, Mantenimiento
+    - type: String 
+    - issueDate : Date
+    - content: String
+    + generateReport(): void
+    + viewReport(): void
+}
+
+' Mantenimiento
+class Maintenance {
+    - idMaintenance: int
+    - type: String
+    - scheduledDate : Date
+    - shop: Shop
+    + Schedule(): void
+    + carryout(): void
+}
+
+' Entidades Gestion Parqueadero
 'Parqueadero
 class ParkingLot {
     - location: String
     - totalCapacity : int
     - cubicles : ArrayList<Cubicle>
+    - parkingFees : ArrayList<ParkingFee>
     + seeDisponibility() void
     + assignCubicle(Vehicle vehicle): void
     + releasedCubicle(Cubicle cubicle) : void
@@ -66,107 +119,55 @@ class Vehicle {
     - type: String
     - ownerName : String
     - description: String
-    - timeSpent : String
+    - entryTime : Date
+    - departureTime : Date
     + calcFeeToPay() : double
 }
 
+
+' Tiket
+class Ticket {
+    - id: int
+    - entryTime : Date
+    - departureTime : Date
+    - totalAmount : double
+    - paymentStatus : String
+}
+
+' Tarifa
+class ParkingFee {
+    - idFee : int
+    - amountPerHours : double
+    - vehicleType : string
+}    
+
 ' Usuario
 class User {
-    # id: int
-    # name: String
+    # id : int
+    # name : String
+    # phone : String
     # email : String
-    # rol : Rol
-    # loggin(): void
-    # logout(): void
-    # updateProfile(): void
+    # address : String
 }
 
-' Propietario
-class Owner {
-    - shops: ArrayList<Shop>
-    + manageShops(): void
-}
-
-' Cliente
-class Client {
-    - rentsRecord: ArrayList<RentalContract>
-    + rentShop(): void
-    + reserveCubicle(): void
-}
-
-' Admin
+' Administrador 
 class Administrator {
-    + manageUsers(): void
-    + manageShops(): void
-    + manageParkingLots(): void
+    - username: String
+    - password : String
 }
-
-class Employee {
-    - id: int
-    - email : String
-    - position : String
-    - salary : double
-    - name : String
-    + clockIn(): void
-    + clockOut(): void
-}
-' Rol
-class Role {
-    - id: int
-    - roleName: String
-    - assignPermissions(): void
-    - seePermissions(): void
-}
-
-' Factura
-class Invoice {
-    - id: int
-    - totalAmount: double 
-    - issueDate: Date
-    - details: String
-    + generateInvoice(): void
-    + payInvoice(): void
-}
-
-' Reporte
-class Report {
-    - type: String
-    - issueDate : Date
-    - content: String
-    + generateReport(): void
-    + viewReport(): void
-}
-
-' Mantenimiento
-class Maintenance {
-    - idMaintenance: int
-    - type: String
-    - scheduledDate : Date
-    - shop: Shop
-    + Schedule(): void
-    + carryout(): void
-}
-
-
 ' Relaciones 
 
 ' Herencia
-User <|-- Owner 
 User <|-- Administrator 
-User <|-- Client
 
 ' Asociacion
-Shop "*" -- "1" Owner : pertenecer
+Shop "*" -- "1" Renter : Arrendado a
 RentalContract "*" -- "1" Shop : alquilar
-RentalContract "*" -- "1" Client : contratar
-ParkingLot "1" --o "n" Cubicle: tener >
-' Relación entre Cubicle y Vehicle
-Cubicle --> Vehicle : "ocupado por"
+RentalContract "*" -- "1" Renter : contratar
 
-' Relación entre Usuario y Rol
-User --> Role : "tiene"
+
 ' Relación entre Invoice y Client
-Invoice --> Client : "emitida a"
+Invoice --> Renter : "emitida a"
 
 Invoice "*" -- "1" Shop: factura
 
@@ -176,9 +177,24 @@ Report --> Administrator : "generado por"
 ' Relación entre Mantenimiento y Shop
 Maintenance --> Shop : "realizado en"
 
+RentalContract o-- "0..*" Payment : tiene
+
+Payment "1" -- "1" Invoice : genera
+
+Renter "1" -- "*" Payment : realiza
+
+
+' Relación entre Cubicle y Vehicle
+Cubicle --> Vehicle : "ocupado por"
+Cubicle --> Ticket : tiene
+
 
 ' Composicion
+ParkingLot "1" --o "n" Cubicle: tener >
+ParkingLot "1" *-- "*" ParkingFee : Disponer
+ShoppingCenter "1" --o "n" Shop : tener
 ShoppingCenter *-- "*" Shop : Esta compuesto por
 ShoppingCenter *-- "1..*" ParkingLot : Esta compuesto por
-ShoppingCenter "1" --o "*" Employee : Tiene
+ShoppingCenter "1" -- "*" Administrator : tiene
+
 @enduml
