@@ -34,7 +34,7 @@ class RentalContract {
     - renterShop : Shop
     - startDate : Date
     - endDate : Date
-    - client : Cliente
+    - renter : Renter
     - amount : double
     - payments : ArrayList<Payment>
     + renewContract(Date endDate): void
@@ -75,6 +75,7 @@ class Invoice {
 ' Reporte
 class Report {
     ' tipo: General, Pagos, Facturas, arrendatario, Local, contrato, Mantenimiento
+    - id : int
     - type: String 
     - issueDate : Date
     - content: String
@@ -88,6 +89,7 @@ class Maintenance {
     - type: String
     - scheduledDate : Date
     - shop: Shop
+    - costAmount : double
     + Schedule(): void
     + carryout(): void
 }

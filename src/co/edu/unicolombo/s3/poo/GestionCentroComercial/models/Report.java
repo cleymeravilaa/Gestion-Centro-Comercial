@@ -8,15 +8,18 @@ import java.util.Date;
  * @author Daniel
  */
 public class Report {
+    private int idReport;
+    private static int idCount;
     private String type;
     private Date issuDate;
     private String content;
     
     public Report(){
-        
+        idReport = ++Report.idCount;
     }
     
     public Report(String type, Date issueDate, String content){
+        this();
         this.type = type;
         this.issuDate = issueDate;
         this.content = content;

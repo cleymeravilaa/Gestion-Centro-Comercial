@@ -12,18 +12,16 @@ public class ShoppingCenter {
     private String closingTime = "10:00 PM";
     private String name;
     private String address;
-    private ArrayList<ParkingLot> parkingLots;
+    private ParkingLot parkingLot;
     private ArrayList<Shop> shops;
-    private ArrayList<Employee> employees;
     
     
     // Constructor 
-    public ShoppingCenter(String name, String address){
+    public ShoppingCenter(String name, String address, ParkingLot parkingLot){
         this.name = name;
         this.address = address;
-        parkingLots  = new ArrayList<ParkingLot>();
+        this.parkingLot = parkingLot;
         shops = new ArrayList<Shop>();
-        employees = new ArrayList<Employee>();
     }
     
     // Metodos Getters para obtener 
@@ -47,13 +45,7 @@ public class ShoppingCenter {
         return shops;
     }
     
-    public ArrayList<ParkingLot> getParkingLots(){
-        return parkingLots;
-    }
     
-    public ArrayList<Employee> getEmployees(){
-        return employees;
-    }
     
     // Metodo setter para establecer
     public void setOpeningTime(String openingTime){
@@ -72,16 +64,6 @@ public class ShoppingCenter {
         this.address = address;
     }
     
-    // Metodo Agregar Parqueadero
-    public void addParkingLot(ParkingLot parkingLot){
-        parkingLots.add(parkingLot);
-    }
-    
-    // Metodo eliminar Parqueadero
-    public void removeParkinglot(ParkingLot parkinglot){
-        parkingLots.remove(parkinglot);
-    }
-    
     // Agregar Local
     public void addShop(Shop shop){
         shops.add(shop);
@@ -91,13 +73,12 @@ public class ShoppingCenter {
     public void removeShop(Shop shop){
         shops.remove(shop);
     }
-    
-    // Agregar empleado
-    public void addEmployee(Employee employee){
-        employees.add(employee);
+
+    public ParkingLot getParkingLot() {
+        return parkingLot;
     }
-    
-    public void removeEmployee(Employee employee){
-        employees.remove(employee);
+
+    public void setParkingLot(ParkingLot parkingLot) {
+        this.parkingLot = parkingLot;
     }
 }
