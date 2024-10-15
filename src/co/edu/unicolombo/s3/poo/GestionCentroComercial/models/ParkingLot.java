@@ -11,6 +11,7 @@ class ParkingLot {
     private String location;
     private int totalCapacity;
     private ArrayList<Cubicle> cubicles;
+    private ArrayList<ParkingFee> parkingFees;
     
     
     public ParkingLot(String location, int totalCapacity){
@@ -42,6 +43,13 @@ class ParkingLot {
     public void setCubicles(ArrayList<Cubicle> cubicles) {
         this.cubicles = cubicles;
     }
-    
+
+    public ArrayList<ParkingFee> getParkingFees() {
+        return parkingFees;
+    }
+
+    public void setParkingFees(ArrayList<ParkingFee> parkingFees) {
+        this.parkingFees = parkingFees;
+    }
     
 }
