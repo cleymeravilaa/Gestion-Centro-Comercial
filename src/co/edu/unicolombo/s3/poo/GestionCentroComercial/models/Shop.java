@@ -1,6 +1,7 @@
 
 package co.edu.unicolombo.s3.poo.GestionCentroComercial.models;
 
+import java.util.ArrayList;
 /**
  *
  * @author CLEYMER
@@ -14,6 +15,7 @@ public class Shop {
     private String location;
     private double rentPrice;
     private String status; // Arrendado, Libre
+    private ArrayList<Maintenance> maintenances;
     
     
     public Shop(String name, String category, double area, String location,
@@ -79,6 +81,21 @@ public class Shop {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public ArrayList<Maintenance> getMaintenances() {
+        return maintenances;
+    }
+
+    public void setMaintenances(ArrayList<Maintenance> maintenances) {
+        this.maintenances = maintenances;
+    }
     
+    public void addMaintenance(Maintenance maintenance){
+        maintenances.add(maintenance);
+    }
+    
+    public void removeMaintenance(Maintenance maintenance){
+        maintenances.remove(maintenance);
+    }
     
 }
