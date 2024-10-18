@@ -1,5 +1,5 @@
 
-package co.edu.unicolombo.s3.poo.GestionCentroComercial.models;
+package co.edu.unicolombo.s3.poo.GestionCentroComercial.Domain.Model;
 
 import java.util.Date;
 /**
