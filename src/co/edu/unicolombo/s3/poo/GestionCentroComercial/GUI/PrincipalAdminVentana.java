@@ -40,18 +40,14 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(60, 135, 171));
         jPanel1.setPreferredSize(new java.awt.Dimension(174, 500));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/unicolombo/s3/poo/GestionCentroComercial/GUI/ajustes (1).png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 16, 149, 140));
 
         adminNameJl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(adminNameJl, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 162, 149, 24));
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Gestionar");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
 
         AdminConfiguracionBtn.setBackground(new java.awt.Color(60, 143, 208));
         AdminConfiguracionBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -63,7 +59,6 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
                 AdminConfiguracionBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(AdminConfiguracionBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 410, 200, 60));
 
         cerrarSesionVentanaAdminBtn1.setBackground(new java.awt.Color(60, 143, 208));
         cerrarSesionVentanaAdminBtn1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -76,7 +71,6 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
                 cerrarSesionVentanaAdminBtn1ActionPerformed(evt);
             }
         });
-        jPanel1.add(cerrarSesionVentanaAdminBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 110, 20));
 
         gestioLocalesBtn1.setBackground(new java.awt.Color(60, 143, 208));
         gestioLocalesBtn1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -88,7 +82,6 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
                 gestioLocalesBtn1ActionPerformed(evt);
             }
         });
-        jPanel1.add(gestioLocalesBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 230, 200, 60));
 
         gestioParqueaderoBtn.setBackground(new java.awt.Color(60, 143, 208));
         gestioParqueaderoBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -100,7 +93,6 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
                 gestioParqueaderoBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(gestioParqueaderoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 290, 200, 60));
 
         ReportesBtn3.setBackground(new java.awt.Color(60, 143, 208));
         ReportesBtn3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -112,11 +104,56 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
                 ReportesBtn3ActionPerformed(evt);
             }
         });
-        jPanel1.add(ReportesBtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 350, 200, 60));
 
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Texto footer para info cualquiera");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 180, -1));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(adminNameJl, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jLabel4))
+            .addComponent(gestioLocalesBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(gestioParqueaderoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(ReportesBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(AdminConfiguracionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(cerrarSesionVentanaAdminBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(adminNameJl, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(jLabel4)
+                .addGap(10, 10, 10)
+                .addComponent(gestioLocalesBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(gestioParqueaderoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(ReportesBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(AdminConfiguracionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(cerrarSesionVentanaAdminBtn1)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel5))
+        );
 
         jPanel2.setBackground(new java.awt.Color(60, 180, 208));
         jPanel2.setPreferredSize(new java.awt.Dimension(726, 73));
@@ -199,7 +236,7 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
         );
         BackgroundPnlLayout.setVerticalGroup(
             BackgroundPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 555, Short.MAX_VALUE)
             .addGroup(BackgroundPnlLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
