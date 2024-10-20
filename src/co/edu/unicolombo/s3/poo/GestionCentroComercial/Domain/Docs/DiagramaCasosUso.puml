@@ -19,7 +19,7 @@ package "Administra la App" as p1 {
     usecase "Controlar ocupación del parqueadero" as UC10
     usecase "Asignar cubículo de estacionamiento" as UC11
     usecase "Generar reportes de uso del parqueadero" as UC12
-    usecase "Consultar disponibilidad de locales" as UC13
+    usecase "Consultar disponibilidad de cubiculo" as UC13
   }
 }
 
