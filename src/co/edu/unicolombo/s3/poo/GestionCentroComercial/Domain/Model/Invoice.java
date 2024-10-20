@@ -4,7 +4,7 @@ package co.edu.unicolombo.s3.poo.GestionCentroComercial.Domain.Model;
 import java.util.Date;
 /**
  *
- * @author CLEYMER
+ * @author Daniel
  */
 public class Invoice {
     private int idInvoice;
