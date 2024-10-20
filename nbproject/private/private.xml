@@ -2,17 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/CLEYMER/OneDrive/Documentos/NetBeansProjects/GestionCentroComercial/src/co/edu/unicolombo/s3/poo/GestionCentroComercial/Business/interfaces/Commands/Shop/ISaveShopCommand.java</file>
-            <file>file:/C:/Users/CLEYMER/OneDrive/Documentos/NetBeansProjects/GestionCentroComercial/src/co/edu/unicolombo/s3/poo/GestionCentroComercial/Business/interfaces/Queries/Shop/IGetShopQuery.java</file>
-            <file>file:/C:/Users/CLEYMER/OneDrive/Documentos/NetBeansProjects/GestionCentroComercial/src/co/edu/unicolombo/s3/poo/GestionCentroComercial/Business/interfaces/Queries/Shop/IGetAllShopQuery.java</file>
-            <file>file:/C:/Users/CLEYMER/OneDrive/Documentos/NetBeansProjects/GestionCentroComercial/src/co/edu/unicolombo/s3/poo/GestionCentroComercial/Main/Main.java</file>
-            <file>file:/C:/Users/CLEYMER/OneDrive/Documentos/NetBeansProjects/GestionCentroComercial/src/co/edu/unicolombo/s3/poo/GestionCentroComercial/Infrastructure/Repositories/ShopRepository.java</file>
-            <file>file:/C:/Users/CLEYMER/OneDrive/Documentos/NetBeansProjects/GestionCentroComercial/src/co/edu/unicolombo/s3/poo/GestionCentroComercial/Business/Handlers/Queries/GetAllShopQueryHandler.java</file>
-            <file>file:/C:/Users/CLEYMER/OneDrive/Documentos/NetBeansProjects/GestionCentroComercial/src/co/edu/unicolombo/s3/poo/GestionCentroComercial/Business/interfaces/Commands/Shop/IUpdateShopCommand.java</file>
-            <file>file:/C:/Users/CLEYMER/OneDrive/Documentos/NetBeansProjects/GestionCentroComercial/src/co/edu/unicolombo/s3/poo/GestionCentroComercial/GUI/PrincipalAdminVentana.java</file>
-            <file>file:/C:/Users/CLEYMER/OneDrive/Documentos/NetBeansProjects/GestionCentroComercial/src/co/edu/unicolombo/s3/poo/GestionCentroComercial/Business/Handlers/Queries/GetShopQueryHandler.java</file>
-            <file>file:/C:/Users/CLEYMER/OneDrive/Documentos/NetBeansProjects/GestionCentroComercial/src/co/edu/unicolombo/s3/poo/GestionCentroComercial/Business/interfaces/Repositories/IShopRepository.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
