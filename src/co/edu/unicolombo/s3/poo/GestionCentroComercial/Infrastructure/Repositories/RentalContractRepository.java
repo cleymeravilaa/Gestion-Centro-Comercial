@@ -10,6 +10,8 @@ import co.edu.unicolombo.s3.poo.GestionCentroComercial.Business.interfaces.Repos
  */
 public class RentalContractRepository implements IRentalContractRepository{
 
+    private static List<RentalContract> rentalContractDb;
+    
     @Override
     public RentalContract saveRentalContract(RentalContract rentalContract) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
