@@ -10,7 +10,7 @@ import java.util.List;
  * @author Daniel
  */
 public class InvoiceRepository implements IInvoiceRepository{
-    private static List<Invoice> ShopDb;
+    private static List<Invoice> invoiceDb;
 
     @Override
     public Invoice saveInvoice(Invoice invoice) throws Exception {
