@@ -38,7 +38,7 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
         BackgroundPnl.setBackground(new java.awt.Color(255, 255, 255));
         BackgroundPnl.setForeground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(60, 135, 171));
+        jPanel1.setBackground(new java.awt.Color(103, 149, 202));
         jPanel1.setPreferredSize(new java.awt.Dimension(174, 500));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/unicolombo/s3/poo/GestionCentroComercial/GUI/Images/ajustes (1).png"))); // NOI18N
@@ -49,12 +49,12 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Gestionar");
 
-        AdminConfiguracionBtn.setBackground(new java.awt.Color(60, 143, 208));
+        AdminConfiguracionBtn.setBackground(new java.awt.Color(60, 180, 208));
         AdminConfiguracionBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         AdminConfiguracionBtn.setForeground(new java.awt.Color(255, 255, 255));
         AdminConfiguracionBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/unicolombo/s3/poo/GestionCentroComercial/GUI/Images/ajuste.png"))); // NOI18N
         AdminConfiguracionBtn.setText("   Configuración");
-        AdminConfiguracionBtn.setBorder(null);
+        AdminConfiguracionBtn.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(60, 180, 208)));
         AdminConfiguracionBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         AdminConfiguracionBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,12 +74,12 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
             }
         });
 
-        gestioLocalesBtn1.setBackground(new java.awt.Color(60, 143, 208));
+        gestioLocalesBtn1.setBackground(new java.awt.Color(60, 180, 208));
         gestioLocalesBtn1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         gestioLocalesBtn1.setForeground(new java.awt.Color(255, 255, 255));
         gestioLocalesBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/unicolombo/s3/poo/GestionCentroComercial/GUI/Images/store-front.png"))); // NOI18N
         gestioLocalesBtn1.setText("   Locales");
-        gestioLocalesBtn1.setBorder(null);
+        gestioLocalesBtn1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(60, 180, 208)));
         gestioLocalesBtn1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         gestioLocalesBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,12 +87,12 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
             }
         });
 
-        gestioParqueaderoBtn.setBackground(new java.awt.Color(60, 143, 208));
+        gestioParqueaderoBtn.setBackground(new java.awt.Color(60, 180, 208));
         gestioParqueaderoBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         gestioParqueaderoBtn.setForeground(new java.awt.Color(255, 255, 255));
         gestioParqueaderoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/unicolombo/s3/poo/GestionCentroComercial/GUI/Images/aparcamiento-de-coches.png"))); // NOI18N
         gestioParqueaderoBtn.setText("   Parqueadero");
-        gestioParqueaderoBtn.setBorder(null);
+        gestioParqueaderoBtn.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(60, 180, 208)));
         gestioParqueaderoBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         gestioParqueaderoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,12 +100,12 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
             }
         });
 
-        ReportesBtn3.setBackground(new java.awt.Color(60, 143, 208));
+        ReportesBtn3.setBackground(new java.awt.Color(60, 180, 208));
         ReportesBtn3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         ReportesBtn3.setForeground(new java.awt.Color(255, 255, 255));
         ReportesBtn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/unicolombo/s3/poo/GestionCentroComercial/GUI/Images/hoja-de-papel.png"))); // NOI18N
         ReportesBtn3.setText("   Reportes");
-        ReportesBtn3.setBorder(null);
+        ReportesBtn3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(60, 180, 208)));
         ReportesBtn3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ReportesBtn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,10 +135,10 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
                         .addComponent(ReportesBtn3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(gestioParqueaderoBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(gestioLocalesBtn1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(cerrarSesionVentanaAdminBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addComponent(cerrarSesionVentanaAdminBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(16, 16, 16))
         );
         jPanel1Layout.setVerticalGroup(
@@ -158,14 +158,14 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
                 .addComponent(ReportesBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(AdminConfiguracionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(cerrarSesionVentanaAdminBtn1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(60, 180, 208));
+        jPanel2.setBackground(new java.awt.Color(75, 186, 155));
         jPanel2.setPreferredSize(new java.awt.Dimension(726, 73));
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N

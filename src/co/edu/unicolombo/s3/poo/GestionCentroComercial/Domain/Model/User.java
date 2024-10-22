@@ -9,7 +9,7 @@ public class User {
     protected int id;
     protected static int countsId;
     protected String name;
-    protected int phone;
+    protected String phone;
     protected String email;
     protected String address;
     
@@ -18,11 +18,12 @@ public class User {
         id = ++User.countsId;
     }
 
-    public User(String name, String email, String phone, String address) {
-        this();
+    public User(int id, String name, String phone, String email, String address) {
         this.id = id;
         this.name = name;
+        this.phone = phone;
         this.email = email;
+        this.address = address;
     }
     
     //Getters y Setters
@@ -40,11 +41,11 @@ public class User {
         this.name = name;
     }
 
-    public int getPhone(){
+    public String getPhone(){
         return phone;
     }
     
-    public void setPhone(int phone){
+    public void setPhone(String phone){
         this.phone = phone;
     }
     public String getEmail() {
