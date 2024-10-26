@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  *
- * @author PC
+ * @author Daniel
  */
 public interface IAdministratorRepository {
     public Administrator saveAdmimistrator(Administrator administrator) throws Exception;

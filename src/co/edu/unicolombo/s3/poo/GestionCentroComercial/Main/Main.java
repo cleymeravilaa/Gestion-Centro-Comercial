@@ -1,6 +1,7 @@
 package co.edu.unicolombo.s3.poo.GestionCentroComercial.Main;
 
-import co.edu.unicolombo.s3.poo.GestionCentroComercial.GUI.PrincipalAdminVentana;
+import co.edu.unicolombo.s3.poo.GestionCentroComercial.GUI.VentanaLoggin;
+import java.awt.Dimension;
 
 /**
  *
@@ -10,9 +11,11 @@ public class Main {
     public static void main(String []args){
         System.out.println("Testing the app");
         
-        PrincipalAdminVentana principalAdminVentana = new PrincipalAdminVentana();
-        principalAdminVentana.setTitle("Ventana Principal de administración");
-        principalAdminVentana.setVisible(true);
-        principalAdminVentana.setLocationRelativeTo(null);
+        VentanaLoggin VentanaLoggin = new VentanaLoggin();
+        VentanaLoggin.setTitle("SmartMall");
+        VentanaLoggin.setVisible(true);
+        VentanaLoggin.setLocationRelativeTo(null);
+        VentanaLoggin.setMinimumSize(new Dimension(700, 480));
+        VentanaLoggin.setMaximumSize(new Dimension(700, 480));
     }
 }
