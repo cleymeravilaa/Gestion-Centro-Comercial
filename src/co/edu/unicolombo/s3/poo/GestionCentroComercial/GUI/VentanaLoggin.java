@@ -16,7 +16,7 @@ public class VentanaLoggin extends javax.swing.JFrame {
      */
     public VentanaLoggin() {
         initComponents();
-        Dimension maxDimension = new Dimension(780, 400);
+        Dimension maxDimension = new Dimension(691, 420);
         addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
@@ -56,23 +56,22 @@ public class VentanaLoggin extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
+        botonPasswordRec = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
+        botonIngresar = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        claveText = new javax.swing.JTextField();
+        idText = new javax.swing.JTextField();
+        rolComBox = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(700, 480));
-        setPreferredSize(new java.awt.Dimension(711, 482));
 
         jPanel2.setBackground(new java.awt.Color(177, 133, 219));
         jPanel2.setForeground(new java.awt.Color(177, 133, 219));
@@ -137,18 +136,18 @@ public class VentanaLoggin extends javax.swing.JFrame {
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel6.setBackground(new java.awt.Color(98, 71, 170));
-        jPanel6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        botonPasswordRec.setBackground(new java.awt.Color(98, 71, 170));
+        botonPasswordRec.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jPanel6MouseMoved(evt);
+                botonPasswordRecMouseMoved(evt);
             }
         });
-        jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonPasswordRec.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel6MouseClicked(evt);
+                botonPasswordRecMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanel6MouseExited(evt);
+                botonPasswordRecMouseExited(evt);
             }
         });
 
@@ -156,36 +155,36 @@ public class VentanaLoggin extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Recupérela fácilmente aquí");
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout botonPasswordRecLayout = new javax.swing.GroupLayout(botonPasswordRec);
+        botonPasswordRec.setLayout(botonPasswordRecLayout);
+        botonPasswordRecLayout.setHorizontalGroup(
+            botonPasswordRecLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonPasswordRecLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel4)
                 .addContainerGap(14, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        botonPasswordRecLayout.setVerticalGroup(
+            botonPasswordRecLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonPasswordRecLayout.createSequentialGroup()
                 .addComponent(jLabel4)
                 .addGap(0, 11, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 200, 30));
+        jPanel3.add(botonPasswordRec, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 200, 30));
 
-        jPanel7.setBackground(new java.awt.Color(98, 71, 170));
-        jPanel7.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        botonIngresar.setBackground(new java.awt.Color(98, 71, 170));
+        botonIngresar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jPanel7MouseMoved(evt);
+                botonIngresarMouseMoved(evt);
             }
         });
-        jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel7MouseClicked(evt);
+                botonIngresarMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanel7MouseExited(evt);
+                botonIngresarMouseExited(evt);
             }
         });
 
@@ -193,24 +192,24 @@ public class VentanaLoggin extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Ingresar");
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        javax.swing.GroupLayout botonIngresarLayout = new javax.swing.GroupLayout(botonIngresar);
+        botonIngresar.setLayout(botonIngresarLayout);
+        botonIngresarLayout.setHorizontalGroup(
+            botonIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonIngresarLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel9)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+        botonIngresarLayout.setVerticalGroup(
+            botonIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, botonIngresarLayout.createSequentialGroup()
                 .addContainerGap(13, Short.MAX_VALUE)
                 .addComponent(jLabel9)
                 .addContainerGap())
         );
 
-        jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 100, -1));
+        jPanel3.add(botonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 100, -1));
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
@@ -237,22 +236,24 @@ public class VentanaLoggin extends javax.swing.JFrame {
         jLabel15.setText("Clave");
         jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
 
-        jTextField1.setBackground(new java.awt.Color(177, 133, 219));
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 250, -1));
+        claveText.setBackground(new java.awt.Color(177, 133, 219));
+        claveText.setBorder(null);
+        jPanel3.add(claveText, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 250, 20));
 
-        jTextField2.setBackground(new java.awt.Color(177, 133, 219));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        idText.setBackground(new java.awt.Color(177, 133, 219));
+        idText.setBorder(null);
+        idText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                idTextActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 250, -1));
+        jPanel3.add(idText, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 250, 20));
 
-        jComboBox1.setBackground(new java.awt.Color(177, 133, 219));
-        jComboBox1.setEditable(true);
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Arrendatario", "Administrador" }));
-        jPanel3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 250, -1));
+        rolComBox.setBackground(new java.awt.Color(177, 133, 219));
+        rolComBox.setEditable(true);
+        rolComBox.setForeground(new java.awt.Color(255, 255, 255));
+        rolComBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Arrendatario", "Administrador" }));
+        jPanel3.add(rolComBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 250, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/unicolombo/s3/poo/GestionCentroComercial/GUI/Images/Linea.png"))); // NOI18N
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 350, 10));
@@ -264,7 +265,7 @@ public class VentanaLoggin extends javax.swing.JFrame {
             .addGroup(backgroundPanekLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         backgroundPanekLayout.setVerticalGroup(
             backgroundPanekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,7 +277,7 @@ public class VentanaLoggin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(backgroundPanek, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(backgroundPanek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,33 +287,33 @@ public class VentanaLoggin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPanel6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseMoved
+    private void botonPasswordRecMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPasswordRecMouseMoved
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel6MouseMoved
+    }//GEN-LAST:event_botonPasswordRecMouseMoved
 
-    private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
+    private void botonPasswordRecMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPasswordRecMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel6MouseClicked
+    }//GEN-LAST:event_botonPasswordRecMouseClicked
 
-    private void jPanel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseExited
+    private void botonPasswordRecMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPasswordRecMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel6MouseExited
+    }//GEN-LAST:event_botonPasswordRecMouseExited
 
-    private void jPanel7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseMoved
+    private void botonIngresarMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIngresarMouseMoved
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel7MouseMoved
+    }//GEN-LAST:event_botonIngresarMouseMoved
 
-    private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
+    private void botonIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIngresarMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel7MouseClicked
+    }//GEN-LAST:event_botonIngresarMouseClicked
 
-    private void jPanel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseExited
+    private void botonIngresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIngresarMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel7MouseExited
+    }//GEN-LAST:event_botonIngresarMouseExited
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void idTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_idTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -351,7 +352,10 @@ public class VentanaLoggin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel backgroundPanek;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JPanel botonIngresar;
+    private javax.swing.JPanel botonPasswordRec;
+    private javax.swing.JTextField claveText;
+    private javax.swing.JTextField idText;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -367,10 +371,6 @@ public class VentanaLoggin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JComboBox<String> rolComBox;
     // End of variables declaration//GEN-END:variables
 }

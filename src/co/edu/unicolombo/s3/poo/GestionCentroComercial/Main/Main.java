@@ -11,11 +11,12 @@ public class Main {
     public static void main(String []args){
         System.out.println("Testing the app");
         
-        VentanaLoggin VentanaLoggin = new VentanaLoggin();
-        VentanaLoggin.setTitle("SmartMall");
-        VentanaLoggin.setVisible(true);
-        VentanaLoggin.setLocationRelativeTo(null);
-        VentanaLoggin.setMinimumSize(new Dimension(700, 480));
-        VentanaLoggin.setMaximumSize(new Dimension(700, 480));
+        VentanaLoggin ventanaLoggin = new VentanaLoggin();
+        ventanaLoggin.setTitle("SmartMall");
+        ventanaLoggin.setVisible(true);
+        ventanaLoggin.setLocationRelativeTo(null);
+        ventanaLoggin.setMinimumSize(new Dimension(700, 480));
+        ventanaLoggin.setMaximumSize(new Dimension(700, 480));
+        ventanaLoggin.setResizable(false);
     }
 }
