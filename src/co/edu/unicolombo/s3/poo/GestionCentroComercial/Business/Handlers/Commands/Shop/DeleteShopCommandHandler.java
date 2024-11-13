@@ -16,7 +16,7 @@ public class DeleteShopCommandHandler implements IDeleteShopCommand{
 
     @Override
     public void deleteShop(int shopId) throws Exception {
-        this.repository.deleteShop(shopId);
+        this.repository.delete(shopId);
     }
     
     

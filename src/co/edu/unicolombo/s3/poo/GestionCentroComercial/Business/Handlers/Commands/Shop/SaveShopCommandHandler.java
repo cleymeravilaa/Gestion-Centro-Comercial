@@ -17,7 +17,7 @@ public class SaveShopCommandHandler implements ISaveShopCommand {
 
     @Override
     public Shop save(Shop shop) throws Exception {
-        return repository.saveShop(shop);
+        return repository.save(shop);
     }
     
     

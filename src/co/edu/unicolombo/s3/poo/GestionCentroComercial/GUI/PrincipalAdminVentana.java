@@ -1,7 +1,10 @@
 
 package co.edu.unicolombo.s3.poo.GestionCentroComercial.GUI;
 
+import co.edu.unicolombo.s3.poo.GestionCentroComercial.GUI.ShopView.ShopPanelManagement;
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
@@ -9,6 +12,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
+import javax.swing.JPanel;
 import javax.swing.Timer;
 
 /**
@@ -30,6 +34,7 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
 
         // Llamar una vez para establecer la fecha y hora al inicio
         setDateAndTime();
+        //initStyles();
     }
     
     public static void main(String[] args) {
@@ -66,7 +71,7 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
         contentPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1150, 750));
+        setMinimumSize(new java.awt.Dimension(1200, 750));
         setPreferredSize(new java.awt.Dimension(1150, 750));
         setResizable(false);
 
@@ -113,6 +118,11 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/unicolombo/s3/poo/GestionCentroComercial/GUI/Images/LocaIcon.png"))); // NOI18N
         jLabel8.setText("    Locales");
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout LocalesBtnLayout = new javax.swing.GroupLayout(LocalesBtn);
         LocalesBtn.setLayout(LocalesBtnLayout);
@@ -258,7 +268,7 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
                         .addComponent(parqueaderoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                 .addComponent(cerrarSesionVentanaAdminBtn1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
@@ -268,18 +278,19 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
         headerPan.setBackground(new java.awt.Color(98, 71, 170));
         headerPan.setPreferredSize(new java.awt.Dimension(174, 73));
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Roboto Mono", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("SmartMall");
 
-        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("JetBrains Mono", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Administración");
 
-        time.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        time.setFont(new java.awt.Font("Roboto Mono", 1, 24)); // NOI18N
         time.setForeground(new java.awt.Color(255, 255, 255));
         time.setText("00:00");
 
+        date.setFont(new java.awt.Font("Roboto Mono", 1, 18)); // NOI18N
         date.setForeground(new java.awt.Color(255, 255, 255));
         date.setText("{dia} {num} de {mes}, {año}");
 
@@ -292,14 +303,11 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
                 .addGroup(headerPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
                 .addGroup(headerPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanLayout.createSequentialGroup()
-                        .addComponent(date)
-                        .addGap(19, 19, 19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanLayout.createSequentialGroup()
-                        .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58))))
+                    .addComponent(date, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(time, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(14, 14, 14))
         );
         headerPanLayout.setVerticalGroup(
             headerPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -312,24 +320,14 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
                         .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(headerPanLayout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(10, 10, 10))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         contentPanel.setBackground(new java.awt.Color(255, 255, 255));
         contentPanel.setForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
-        contentPanel.setLayout(contentPanelLayout);
-        contentPanelLayout.setHorizontalGroup(
-            contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        contentPanelLayout.setVerticalGroup(
-            contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        contentPanel.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout BackgroundPnlLayout = new javax.swing.GroupLayout(BackgroundPnl);
         BackgroundPnl.setLayout(BackgroundPnlLayout);
@@ -339,12 +337,12 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
                 .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addGroup(BackgroundPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(headerPan, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE)
+                    .addComponent(headerPan, javax.swing.GroupLayout.DEFAULT_SIZE, 823, Short.MAX_VALUE)
                     .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         BackgroundPnlLayout.setVerticalGroup(
             BackgroundPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, 561, Short.MAX_VALUE)
+            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
             .addGroup(BackgroundPnlLayout.createSequentialGroup()
                 .addComponent(headerPan, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -369,7 +367,8 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cerrarSesionVentanaAdminBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionVentanaAdminBtn1ActionPerformed
-        // TODO add your handling code here:
+        ShopPanelManagement panel = new ShopPanelManagement();
+        showJPanel(panel);
     }//GEN-LAST:event_cerrarSesionVentanaAdminBtn1ActionPerformed
 
     private void LocalesBtnMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LocalesBtnMouseMoved
@@ -396,12 +395,17 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
         parqueaderoBoton.setBackground(new Color(177,133,219));
     }//GEN-LAST:event_parqueaderoBotonMouseExited
 
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        ShopPanelManagement panel = new ShopPanelManagement();
+        showJPanel(panel);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
     private void setDateAndTime() {
         Locale localeColombia = new Locale("es", "CO");
 
         // Formateo para la fecha completa
         LocalDate date = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, dd 'de' MMMM 'de' yyyy", localeColombia);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("'Hoy es' EEEE dd 'de' MMMM 'de' yyyy", localeColombia);
         String fechaString = date.format(formatter);
         
         // Formateo solo para la hora en minutos
@@ -413,13 +417,27 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
         this.time.setText(timeString);
         this.date.setText(fechaString);
     }
+    
+    public static void showJPanel(JPanel panel){
+        panel.setLocation(0, 0);
+        panel.setSize(1000, 600);
+        panel.setMaximumSize(new Dimension(32767, 32767));
+        
+        contentPanel.removeAll();
+        contentPanel.add(panel, BorderLayout.CENTER);
+        contentPanel.revalidate();
+        contentPanel.repaint();
+        
+    }
+    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BackgroundPnl;
     private javax.swing.JPanel LocalesBtn;
     private javax.swing.JLabel adminNameJl;
     private javax.swing.JButton cerrarSesionVentanaAdminBtn1;
-    private javax.swing.JPanel contentPanel;
+    private static javax.swing.JPanel contentPanel;
     private javax.swing.JLabel date;
     private javax.swing.JPanel headerPan;
     private javax.swing.JLabel jLabel1;

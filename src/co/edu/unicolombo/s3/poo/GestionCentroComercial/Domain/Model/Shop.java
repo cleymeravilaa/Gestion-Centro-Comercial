@@ -17,7 +17,7 @@ public class Shop {
     private String status; // Arrendado, Libre
     private ArrayList<Maintenance> maintenances;
     
-    
+    public Shop(){}
     public Shop(String name, String category, double area, String location,
             double rentPrice, String status){
         this.id = ++Shop.idCouts;
@@ -33,6 +33,9 @@ public class Shop {
         return id;
     }
 
+    public void setId(int id){
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -97,5 +100,12 @@ public class Shop {
     public void removeMaintenance(Maintenance maintenance){
         maintenances.remove(maintenance);
     }
+
+    @Override
+    public String toString() {
+        return "Shop{" + "id=" + id + ", name=" + name + ", category=" + category + ", area=" + area + ", location=" + location + ", rentPrice=" + rentPrice + ", status=" + status + ", maintenances=" + maintenances + '}';
+    }
+    
+    
     
 }

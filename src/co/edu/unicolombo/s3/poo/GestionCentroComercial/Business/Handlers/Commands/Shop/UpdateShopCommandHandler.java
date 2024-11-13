@@ -16,8 +16,8 @@ public class UpdateShopCommandHandler implements IUpdateShopCommand{
     }
 
     @Override
-    public Shop updateShop(int shopId) throws Exception {
-        return this.repository.updateShop(shopId);
+    public Shop updateShop(Shop shop) throws Exception {
+        return this.repository.update(shop);
     }
     
     

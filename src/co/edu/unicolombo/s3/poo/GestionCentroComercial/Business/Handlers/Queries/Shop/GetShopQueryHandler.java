@@ -24,6 +24,8 @@ public class GetShopQueryHandler implements IGetShopQuery{
     public Shop getShop(String name) throws Exception {
         return this.repository.findByName(name);
     }
+
+
     
     
 }

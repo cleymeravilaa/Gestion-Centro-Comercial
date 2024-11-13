@@ -8,11 +8,10 @@ import java.util.List;
  * @author CLEYMER
  */
 public interface IShopRepository {
-    public Shop saveShop(Shop shop) throws Exception;
-    public Shop findById(int shopId) throws Exception;
-    public Shop findByName(String name) throws Exception;
-    public List<Shop> findAll() throws Exception;
-    public void deleteShop(int id) throws Exception;
-    public Shop updateShop(int shopId)throws Exception;
-    
+    Shop save(Shop shop);  // Guardar un nuevo Shop
+    Shop findById(int id); // Buscar un Shop por ID
+    List<Shop> findAll();  // Obtener todos los Shops
+    Shop update(Shop shop); // Actualizar un Shop existente
+    void delete(int id);
+    Shop findByName(String name);
 }
