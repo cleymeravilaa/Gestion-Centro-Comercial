@@ -2,7 +2,6 @@ package co.edu.unicolombo.s3.poo.GestionCentroComercial.Infrastructure.Repositor
 
 import co.edu.unicolombo.s3.poo.GestionCentroComercial.Business.interfaces.Repositories.IShopRepository;
 import co.edu.unicolombo.s3.poo.GestionCentroComercial.Domain.Model.Shop;
-import java.util.List;
 import co.edu.unicolombo.s3.poo.GestionCentroComercial.Infrastructure.Persistence.DatabaseConnection;
 /**
  *

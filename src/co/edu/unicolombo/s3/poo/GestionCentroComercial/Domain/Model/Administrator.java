@@ -12,11 +12,11 @@ public class Administrator extends User{
     public Administrator() {
     }
     
-    public Administrator(int id, String name, String email,
+    public Administrator(String name, String email,
             String username, String password,
-            String phone, String address
+            int phone, String address
         ){
-        super(id, name, email, phone, address);
+        super(name, phone, email, address);
     }
     
     //Metodos
