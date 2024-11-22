@@ -8,5 +8,5 @@ import co.edu.unicolombo.s3.poo.GestionCentroComercial.Domain.Model.Administrato
  */
 public interface IGetAdminQuery {
     public Administrator getAdminById(int adminId) throws Exception;
-    public Administrator getAdminByName(String name) throws Exception;
+    public Administrator getAdminByEmail(String email) throws Exception;
 }

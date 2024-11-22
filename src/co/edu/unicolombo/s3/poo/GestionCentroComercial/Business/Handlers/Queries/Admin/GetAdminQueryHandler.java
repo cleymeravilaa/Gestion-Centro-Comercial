@@ -22,7 +22,7 @@ public class GetAdminQueryHandler implements IGetAdminQuery{
     }
 
     @Override
-    public Administrator getAdminByName(String AdminName) throws Exception {
-        return this.repository.findAdminByName(AdminName);
+    public Administrator getAdminByEmail(String AdminName) throws Exception {
+        return this.repository.findAdminByEmail(AdminName);
     }
 }

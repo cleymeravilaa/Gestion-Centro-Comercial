@@ -147,11 +147,11 @@ public class UserRepository extends DatabaseConnection implements IUserRepositor
             stmt.setString(4, user.getAddress());
             stmt.setInt(7, user.getId());
             stmt.executeUpdate();
-            System.out.println("Tienda actualizada correctamente.");
+            System.out.println("Usuario actualizado correctamente.");
             return new User(user.getName(), user.getPhone(), user.getEmail(), user.getAddress());
 
         } catch (SQLException e) {
-            System.err.println("Error al actualizar el Shop: " + e.getMessage());
+            System.err.println("Error al actualizar el usuario: " + e.getMessage());
             return null;
         } finally {
             close();

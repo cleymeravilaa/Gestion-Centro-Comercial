@@ -1,6 +1,5 @@
 package co.edu.unicolombo.s3.poo.GestionCentroComercial.GUI.ShopView;
 
-import co.edu.unicolombo.s3.poo.GestionCentroComercial.Business.Handlers.Commands.Shop.DeleteShopCommandHandler;
 import co.edu.unicolombo.s3.poo.GestionCentroComercial.Business.Handlers.Queries.Shop.GetAllShopQueryHandler;
 import co.edu.unicolombo.s3.poo.GestionCentroComercial.Business.Handlers.Queries.Shop.GetShopQueryHandler;
 import co.edu.unicolombo.s3.poo.GestionCentroComercial.Domain.Model.Shop;

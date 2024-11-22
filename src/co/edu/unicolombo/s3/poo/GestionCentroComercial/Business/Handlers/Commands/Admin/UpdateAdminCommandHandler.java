@@ -17,8 +17,8 @@ public class UpdateAdminCommandHandler implements IUpdateAdminCommand{
     }
 
     @Override
-    public Administrator updateAdmin(int adminId) throws Exception {
-        return repository.updateAdmin(adminId);
+    public Administrator updateAdmin(Administrator admin) throws Exception {
+        return repository.updateAdmin(admin);
     }
     
 }

@@ -11,8 +11,8 @@ import java.util.List;
 public interface IAdminRepository {
     public Administrator saveAdmin(Administrator admin) throws Exception;
     public Administrator findAdminById(int adminId) throws Exception;
-    public Administrator findAdminByName(String adminName) throws Exception;
+    public Administrator findAdminByEmail(String adminName) throws Exception;
     public List<Administrator> findAll() throws Exception;
     public void deleteAdmin(int adminId) throws Exception;
-    public Administrator updateAdmin(int adminId) throws Exception;
+    public Administrator updateAdmin(Administrator admin) throws Exception;
 }

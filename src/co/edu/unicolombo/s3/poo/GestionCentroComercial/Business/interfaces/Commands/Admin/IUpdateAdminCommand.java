@@ -8,5 +8,5 @@ import co.edu.unicolombo.s3.poo.GestionCentroComercial.Domain.Model.Administrato
  * @author Daniel
  */
 public interface IUpdateAdminCommand {
-    public Administrator updateAdmin(int adminId) throws Exception;
+    public Administrator updateAdmin(Administrator admin) throws Exception;
 }
