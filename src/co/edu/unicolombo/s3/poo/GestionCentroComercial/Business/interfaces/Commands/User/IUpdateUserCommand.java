@@ -8,5 +8,5 @@ import co.edu.unicolombo.s3.poo.GestionCentroComercial.Domain.Model.User;
  * @author Daniel
  */
 public interface IUpdateUserCommand {
-    public User updateUser(int userId) throws Exception;
+    public User updateUser(User user) throws Exception;
 }

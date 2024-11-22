@@ -17,8 +17,8 @@ public class UpdateUserCommandHandler implements IUpdateUserCommand{
     }
 
     @Override
-    public User updateUser(int userId) throws Exception {
-        return repository.updateUser(userId);
+    public User updateUser(User user) throws Exception {
+        return repository.updateUser(user);
     }
     
 }

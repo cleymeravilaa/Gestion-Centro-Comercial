@@ -14,5 +14,5 @@ public interface IUserRepository {
     public User findByName(String UserName) throws Exception;
     public List<User> findAll() throws Exception;
     public void deleteUser(int UserId) throws Exception;
-    public User updateUser(int userId) throws Exception;
+    public User updateUser(User user) throws Exception;
 }

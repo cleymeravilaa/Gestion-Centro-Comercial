@@ -9,17 +9,16 @@ public class User {
     protected int id;
     protected static int countsId;
     protected String name;
-    protected String phone;
+    protected int phone;
     protected String email;
     protected String address;
     
     
     public User() {
-        id = ++User.countsId;
     }
 
-    public User(int id, String name, String phone, String email, String address) {
-        this.id = id;
+    public User(String name, int phone, String email, String address) {
+        this.id = ++User.countsId;
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -32,6 +31,9 @@ public class User {
         return id;
     }
 
+    public void setId(int id){
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -41,11 +43,11 @@ public class User {
         this.name = name;
     }
 
-    public String getPhone(){
+    public int getPhone(){
         return phone;
     }
     
-    public void setPhone(String phone){
+    public void setPhone(int phone){
         this.phone = phone;
     }
     public String getEmail() {
