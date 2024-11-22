@@ -311,7 +311,7 @@ public class FormSaveShop extends javax.swing.JPanel {
                                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(50, 50, 50)
                                         .addComponent(areaField, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(47, Short.MAX_VALUE))))
+                        .addContainerGap(45, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,8 +351,8 @@ public class FormSaveShop extends javax.swing.JPanel {
                     .addComponent(btnGoBack, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 36, Short.MAX_VALUE))
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 612, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -474,6 +474,12 @@ public class FormSaveShop extends javax.swing.JPanel {
             Shop savingShop = new Shop(name, category, area, location, renterPrice, "Desocupado");
             try {
                 handler.save(savingShop);
+                
+                if (handler.save(savingShop)==null) {
+                    JOptionPane.showMessageDialog(null, "No fue posible realizar el registro por que ya existe un registro con tal nombre");
+                    clearFields();
+                    return;
+                }
                 JOptionPane.showMessageDialog(null, "SE REALIZO CON EXITO EL REGISTRO");
                 clearFields();
                 GetAllShopQueryHandler h = new GetAllShopQueryHandler(repository);
@@ -484,7 +490,6 @@ public class FormSaveShop extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "NO FUE POSIBLE REALIZAR EL REGISTRO: "+ ex.getMessage());
             }
 
-            System.out.println("SE REALIZO CON EXITO EL REGISTRO");
         } else {
             UpdateShopCommandHandler handler = new UpdateShopCommandHandler(repository);
            
@@ -498,7 +503,6 @@ public class FormSaveShop extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "DEBE CAMBIAR ALGUN ATRIBUTO");
                 return;
             }
-            System.out.println("SON IGUALES LOS OBJETOS: "+ isEqualsShopObjects(savingShop));
             try{
                 handler.updateShop(savingShop);
                 JOptionPane.showMessageDialog(null, "SE ACTUALIZO CON EXITO EL REGISTRO");
