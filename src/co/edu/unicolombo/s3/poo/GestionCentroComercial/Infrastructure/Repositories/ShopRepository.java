@@ -11,6 +11,7 @@ import co.edu.unicolombo.s3.poo.GestionCentroComercial.Infrastructure.Persistenc
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class ShopRepository extends DatabaseConnection implements IShopRepository {
 
