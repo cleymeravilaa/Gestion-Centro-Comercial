@@ -15,6 +15,36 @@ import java.util.List;
 
 public class AdministratorRepository extends DatabaseConnection implements IAdminRepository{
     public static List<Administrator> administratorDb;
+    
+    public Administrator login(String email, String password) throws Exception {
+    connect();
+    String sql = "SELECT * FROM administrators WHERE email = ? AND password = ?";
+    Administrator admin = null;
+
+    try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setString(1, email);
+        stmt.setString(2, password);
+        ResultSet rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            admin = new Administrator(
+                rs.getString("name"),
+                rs.getString("email"),
+                rs.getString("password"),
+                rs.getInt("phone"),
+                rs.getString("address")
+            );
+            admin.setId(rs.getInt("admin_id"));
+        }
+    } catch (SQLException e) {
+        System.err.println("Error al intentar iniciar sesión: " + e.getMessage());
+    } finally {
+        close();
+    }
+
+    return admin;
+}
+
 
     @Override
     public Administrator saveAdmin(Administrator admin) throws Exception {

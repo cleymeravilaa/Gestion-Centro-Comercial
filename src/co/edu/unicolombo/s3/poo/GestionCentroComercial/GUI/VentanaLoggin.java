@@ -1,9 +1,13 @@
 
 package co.edu.unicolombo.s3.poo.GestionCentroComercial.GUI;
 
+import co.edu.unicolombo.s3.poo.GestionCentroComercial.Domain.Model.Administrator;
+import co.edu.unicolombo.s3.poo.GestionCentroComercial.Infrastructure.Repositories.AdministratorRepository;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -66,13 +70,13 @@ public class VentanaLoggin extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        claveText = new javax.swing.JTextField();
-        idText = new javax.swing.JTextField();
+        emailText = new javax.swing.JTextField();
         rolComBox = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         botonRegisterAdmin = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        passwordText = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(700, 480));
@@ -217,7 +221,7 @@ public class VentanaLoggin extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("Id");
+        jLabel11.setText("Email");
 
         jLabel13.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
@@ -229,17 +233,14 @@ public class VentanaLoggin extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel15.setText("Clave");
+        jLabel15.setText("Contraseña");
 
-        claveText.setBackground(new java.awt.Color(177, 133, 219));
-        claveText.setBorder(null);
-
-        idText.setBackground(new java.awt.Color(177, 133, 219));
-        idText.setBorder(null);
-        idText.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        idText.addActionListener(new java.awt.event.ActionListener() {
+        emailText.setBackground(new java.awt.Color(177, 133, 219));
+        emailText.setBorder(null);
+        emailText.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        emailText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idTextActionPerformed(evt);
+                emailTextActionPerformed(evt);
             }
         });
 
@@ -293,6 +294,9 @@ public class VentanaLoggin extends javax.swing.JFrame {
                 .addComponent(jLabel6))
         );
 
+        passwordText.setBackground(new java.awt.Color(177, 133, 219));
+        passwordText.setText("jPasswordField1");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -304,23 +308,12 @@ public class VentanaLoggin extends javax.swing.JFrame {
                         .addComponent(jLabel10))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(jLabel11)
-                        .addGap(38, 38, 38)
-                        .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel15)
-                        .addGap(26, 26, 26)
-                        .addComponent(claveText, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
                         .addComponent(jLabel13)
                         .addGap(29, 29, 29)
                         .addComponent(rolComBox, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(100, 100, 100)
                                 .addComponent(jLabel14))
@@ -332,8 +325,20 @@ public class VentanaLoggin extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(botonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(botonRegisterAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(26, Short.MAX_VALUE))
+                                    .addComponent(botonRegisterAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addGap(9, 9, 9)
+                                    .addComponent(jLabel11)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(passwordText, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                                        .addComponent(emailText))))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel15)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,20 +346,20 @@ public class VentanaLoggin extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel10)
                 .addGap(35, 35, 35)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailText, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(claveText, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                    .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
                     .addComponent(rolComBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addComponent(botonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonRegisterAdmin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -397,52 +402,69 @@ public class VentanaLoggin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonPasswordRecMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPasswordRecMouseMoved
-        // TODO add your handling code here:
+        botonPasswordRec.setBackground(new Color(193,173,212));
     }//GEN-LAST:event_botonPasswordRecMouseMoved
 
     private void botonPasswordRecMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPasswordRecMouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_botonPasswordRecMouseClicked
 
     private void botonPasswordRecMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPasswordRecMouseExited
-        // TODO add your handling code here:
+        botonPasswordRec.setBackground(new Color(98,71,170));
     }//GEN-LAST:event_botonPasswordRecMouseExited
 
     private void botonIngresarMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIngresarMouseMoved
-        // TODO add your handling code here:
+        botonIngresar.setBackground(new Color(193,173,212));
     }//GEN-LAST:event_botonIngresarMouseMoved
 
     private void botonIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIngresarMouseClicked
-        // TODO add your handling code here:
+        String email = emailText.getText().trim();
+    String password = new String(passwordText.getPassword()).trim();
+
+    try {
+        // Llamar al repositorio para validar las credenciales
+        AdministratorRepository adminRepo = new AdministratorRepository();
+        Administrator admin = adminRepo.login(email, password);
+
+        if (admin != null) {
+            // Si las credenciales son válidas, muestra un mensaje de éxito o redirige
+            JOptionPane.showMessageDialog(null, "Bienvenido, " + admin.getName());
+            PrincipalAdminVentana ventana = new PrincipalAdminVentana();
+            ventana.setVisible(true);
+            ventana.setLocationRelativeTo(null);
+        } else {
+            // Si no coinciden las credenciales
+            JOptionPane.showMessageDialog(null, "Email o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(null, "Error al intentar iniciar sesión: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_botonIngresarMouseClicked
 
     private void botonIngresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIngresarMouseExited
-        // TODO add your handling code here:
+        botonIngresar.setBackground(new Color(98,71,170));
     }//GEN-LAST:event_botonIngresarMouseExited
 
-    private void idTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idTextActionPerformed
-
-    private void rolComBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rolComBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rolComBoxActionPerformed
+    private void emailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextActionPerformed
+        
+    }//GEN-LAST:event_emailTextActionPerformed
 
     private void botonRegisterAdminMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegisterAdminMouseMoved
-        // TODO add your handling code here:
+        botonRegisterAdmin.setBackground(new Color(193,173,212));
     }//GEN-LAST:event_botonRegisterAdminMouseMoved
 
     private void botonRegisterAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegisterAdminMouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_botonRegisterAdminMouseClicked
 
     private void botonRegisterAdminMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegisterAdminMouseExited
-        // TODO add your handling code here:
+        botonRegisterAdmin.setBackground(new Color(98,71,170));
     }//GEN-LAST:event_botonRegisterAdminMouseExited
 
-    /**
-     * @param args the command line arguments
-     */
+    private void rolComBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rolComBoxActionPerformed
+        
+    }//GEN-LAST:event_rolComBoxActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -478,8 +500,7 @@ public class VentanaLoggin extends javax.swing.JFrame {
     private javax.swing.JPanel botonIngresar;
     private javax.swing.JPanel botonPasswordRec;
     private javax.swing.JPanel botonRegisterAdmin;
-    private javax.swing.JTextField claveText;
-    private javax.swing.JTextField idText;
+    private javax.swing.JTextField emailText;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -497,6 +518,7 @@ public class VentanaLoggin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPasswordField passwordText;
     private javax.swing.JComboBox<String> rolComBox;
     // End of variables declaration//GEN-END:variables
 }

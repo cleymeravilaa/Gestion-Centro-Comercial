@@ -9,6 +9,7 @@ import java.util.List;
  * @author Daniel
  */
 public interface IAdminRepository {
+    public Administrator login(String email, String password) throws Exception;
     public Administrator saveAdmin(Administrator admin) throws Exception;
     public Administrator findAdminById(int adminId) throws Exception;
     public Administrator findAdminByEmail(String adminName) throws Exception;
