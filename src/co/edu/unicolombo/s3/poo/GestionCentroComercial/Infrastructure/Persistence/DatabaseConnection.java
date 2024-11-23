@@ -19,9 +19,9 @@ public abstract class DatabaseConnection {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             // URL de conexión a la base de datos
-            String url = System.getenv("DB_URL"); // Cambia esto según tu configuración
-            String username = System.getenv("DB_USER"); // Cambia esto con tu usuario de MySQL
-            String password = System.getenv("DB_PASSWORD");// Cambia esto con tu contraseña de MySQL
+            String url = System.getenv("jdbc:mysql://localhost:3306/parqueaderobd"); // Cambia esto según tu configuración
+            String username = System.getenv("root"); // Cambia esto con tu usuario de MySQL
+            String password = System.getenv("12345");// Cambia esto con tu contraseña de MySQL
 
             // Conectarse a la base de datos
             this.connection = DriverManager.getConnection(url, username, password);
