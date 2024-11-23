@@ -1,6 +1,7 @@
 
 package co.edu.unicolombo.s3.poo.GestionCentroComercial.GUI;
 
+import co.edu.unicolombo.s3.poo.GestionCentroComercial.Domain.Model.Administrator;
 import co.edu.unicolombo.s3.poo.GestionCentroComercial.GUI.ShopView.ShopPanelManagement;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -21,7 +22,7 @@ import javax.swing.Timer;
  */
 public class PrincipalAdminVentana extends javax.swing.JFrame {
 
-    public PrincipalAdminVentana() {
+    public PrincipalAdminVentana(Administrator administrator) {
         initComponents();
         // Configurar el temporizador para actualizar cada minuto
         Timer timer = new Timer(60000, new ActionListener() {
@@ -37,14 +38,8 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
         PrincipalPanelApp principalPanelApp = new PrincipalPanelApp();
         PrincipalAdminVentana.showJPanel(principalPanelApp);
         
-    }
-    
-    public static void main(String[] args) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PrincipalAdminVentana().setVisible(true);
-            }
-        });
+        adminNameJL.setText(administrator.getName());
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -54,7 +49,7 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
         BackgroundPnl = new javax.swing.JPanel();
         menu = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        adminNameJl = new javax.swing.JLabel();
+        adminNameJL = new javax.swing.JLabel();
         cerrarSesionVentanaAdminBtn1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         LocalesBtn = new javax.swing.JPanel();
@@ -84,8 +79,9 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/unicolombo/s3/poo/GestionCentroComercial/GUI/Images/avatar-de-usua.png"))); // NOI18N
 
-        adminNameJl.setForeground(new java.awt.Color(255, 255, 255));
-        adminNameJl.setText("           Nombre Admin");
+        adminNameJL.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        adminNameJL.setForeground(new java.awt.Color(255, 255, 255));
+        adminNameJL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         cerrarSesionVentanaAdminBtn1.setBackground(new java.awt.Color(98, 71, 170));
         cerrarSesionVentanaAdminBtn1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -224,37 +220,38 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
         menu.setLayout(menuLayout);
         menuLayout.setHorizontalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(parqueaderoBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(menuLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jLabel3))
-            .addGroup(menuLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(adminNameJl, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(menuLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(LocalesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(reportesBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(parqueaderoBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(menuLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(menuLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(cerrarSesionVentanaAdminBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(menuLayout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jLabel5))
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menuLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel3))
+                    .addComponent(LocalesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reportesBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(menuLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(menuLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(cerrarSesionVentanaAdminBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(menuLayout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(jLabel5))
+                    .addGroup(menuLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(adminNameJL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         menuLayout.setVerticalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(adminNameJl, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
+                .addGap(12, 12, 12)
+                .addComponent(adminNameJL, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
                 .addGap(12, 12, 12)
                 .addComponent(LocalesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -367,8 +364,11 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cerrarSesionVentanaAdminBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionVentanaAdminBtn1ActionPerformed
-        ShopPanelManagement panel = new ShopPanelManagement();
-        showJPanel(panel);
+        this.setVisible(false);
+        
+        VentanaLoggin loggin = new VentanaLoggin();
+        loggin.setVisible(true);
+        loggin.setLocationRelativeTo(null);
     }//GEN-LAST:event_cerrarSesionVentanaAdminBtn1ActionPerformed
 
     private void LocalesBtnMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LocalesBtnMouseMoved
@@ -437,7 +437,7 @@ public class PrincipalAdminVentana extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BackgroundPnl;
     private javax.swing.JPanel LocalesBtn;
-    private javax.swing.JLabel adminNameJl;
+    private javax.swing.JLabel adminNameJL;
     private javax.swing.JButton cerrarSesionVentanaAdminBtn1;
     private static javax.swing.JPanel contentPanel;
     private javax.swing.JLabel date;

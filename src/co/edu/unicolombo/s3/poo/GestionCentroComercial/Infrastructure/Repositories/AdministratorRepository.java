@@ -16,6 +16,7 @@ import java.util.List;
 public class AdministratorRepository extends DatabaseConnection implements IAdminRepository{
     public static List<Administrator> administratorDb;
     
+    @Override
     public Administrator login(String email, String password) throws Exception {
     connect();
     String sql = "SELECT * FROM administrators WHERE email = ? AND password = ?";
